@@ -29,12 +29,12 @@ class Tweet_preprocess:
                         flag = 0
                         for word in tweet_text:
                                 if self.detect_language(word)=='hindi':
-                                        print 'Removing tweet '+ str(i)
+                                        #print 'Removing tweet '+ str(i)
                                         flag += 1
                                         break
                         
                         if flag==0:
-                                print 'Appending tweet '+ str(i)
+                                #print 'Appending tweet '+ str(i)
                                 filtered_tweets.append(tweets[i])                
                 return filtered_tweets
         

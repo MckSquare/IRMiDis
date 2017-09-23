@@ -50,6 +50,6 @@ tweet_object = Tweet_preprocess()
 tweet_array = tweet_object.json_parser('/home/pratyusha/Documents/DeepLearning/Fire2017-IRMiDis-data/microblogs-crawl-directory/NepalQuake-code-mixed-training-tweets.jsonl')
 
 #return filtered tweets:
-tweet_object.filter_tweets(tweet_array)
-
+fil=tweet_object.filter_tweets(tweet_array)
+#tweet_object.print_tweet_data(fil)
 

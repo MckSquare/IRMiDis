@@ -107,7 +107,28 @@ class Tweet_dataset:
                
                 opfile.close()
                 
-                
+        def label_tweets(self, tweets, tweet_id_need, tweet_id_avail):               
+                no_of_tweets = len(tweets)                                
+                need = 0
+                avail = 0
+                for i in range(0, no_of_tweets):
+                        data = tweets[i]
+                        tweet_text = data['text']
+                        tweet_id = str(data['id'])
+                        
+                        if tweet_id in tweet_id_need:
+                                data['type'] = 'need'                               
+                                #tweet_text.append(" #need")
+                                need += 1
+                        elif tweet_id in tweet_id_avail:
+                                data['type'] = 'availability'
+                                #tweet_text.append(" #availability")
+                                avail += 1
+                        else:
+                                data['type'] = 'none'
+                print 'need: '+ str(need)
+                print 'availability: '+str(avail)
+                print 'total: '+ str(no_of_tweets)                
                 
                                 
 
